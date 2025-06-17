@@ -70,3 +70,12 @@ section h3.section-subheading {
 .topic-heading {
     margin: 15px 0;
 }
+
+/* Estilização do mapa da Conferência */
+
+#googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%) ;
+    filter: grayscale(100%) ;
+}

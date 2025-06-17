@@ -180,3 +180,34 @@ contactForm.addEventListener("submit", async () => {
     }
 })
 
+// Mapa da conferência
+
+// Ponto no mapa a localizar (cidade do Porto)
+
+const porto = new google.maps.LatLng(41.14961, -8.61099)
+
+const mapProp = {
+    center:porto,
+    zoom:12,
+    scrollwheel:false,
+    draggable:false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+}
+
+const map = new google.maps.Map(document.getElementById("googleMap"), mapProp)
+
+// Janela de informação (info window)
+
+const infowindow = new google.maps.InfoWindow({
+    content: "É aqui WebConference!"
+})
+
+const marker = new google.maps.Marker({
+    position:porto,
+    map:map,
+    title:"WebConference"
+})
+
+marker.addListener('click', function() {
+    infowindow.open(map, marker)
+})
